@@ -1,66 +1,66 @@
-import { Github, Linkedin, Mail, Award, BookOpen, Briefcase, Code } from "lucide-react"
+import { Github, Linkedin, Mail, Award, BookOpen, Briefcase, Code, Users } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import Link from "next/link"
+import { Footer } from "@/components/Footer"
+import { DownloadButton } from "@/components/DownloadButton"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
-      <header className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-20 px-4">
-        <div className="container mx-auto text-center space-y-4 max-w-4xl">
+      <header className="py-20 px-4 border-b-2 border-gray-200">
+        <div className="container mx-auto text-center space-y-4 max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold">Yong Jun Fai</h1>
-          <p className="text-xl">AI Developer | Data Science Enthusiast</p>
-          <p className="text-lg opacity-90">Bachelor of Computer Science (Hons) in Artificial Intelligence</p>
+          <p className="text-xl text-gray-600">AI Developer | Data Science Enthusiast</p>
 
           <div className="flex justify-center gap-6 mt-8">
             <Link
               href="https://github.com/EdwinYJF"
-              className="hover:opacity-80 transition-opacity flex items-center gap-2"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
               target="_blank"
             >
-              <Github className="w-5 h-5" />
-              <span>GitHub</span>
+              <Github className="w-6 h-6" />
+              <span className="sr-only">GitHub</span>
             </Link>
             <Link
               href="https://www.linkedin.com/in/yongjunfai"
-              className="hover:opacity-80 transition-opacity flex items-center gap-2"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
               target="_blank"
             >
-              <Linkedin className="w-5 h-5" />
-              <span>LinkedIn</span>
+              <Linkedin className="w-6 h-6" />
+              <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link
-              href="mailto:yongjunfai@gmail.com"
-              className="hover:opacity-80 transition-opacity flex items-center gap-2"
-            >
-              <Mail className="w-5 h-5" />
-              <span>Email</span>
+            <Link href="mailto:yongjunfai@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Mail className="w-6 h-6" />
+              <span className="sr-only">Email</span>
             </Link>
           </div>
+
+          <DownloadButton />
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-12 max-w-4xl space-y-12">
+      <main className="container mx-auto px-4 py-12 max-w-2xl space-y-16">
         {/* Education */}
-        <section>
+        <section className="pb-16 border-b-2 border-gray-200">
           <div className="flex items-center gap-3 mb-6">
-            <BookOpen className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Education</h2>
+            <BookOpen className="w-6 h-6 text-gray-600" />
+            <h2 className="text-2xl font-semibold">Education</h2>
           </div>
-          <Card>
-            <CardHeader>
+          <Card className="border-0 shadow-none">
+            <CardHeader className="px-0">
               <CardTitle>Asia Pacific University of Technology & Innovation</CardTitle>
-              <CardDescription>2022 March - 2025 February</CardDescription>
+              <CardDescription className="text-gray-500">2022 March - 2025 February</CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="font-medium">Bachelor of Computer Science (Hons) in Artificial Intelligence</p>
-              <p className="mt-2">CGPA: 3.24 / 4.0</p>
+            <CardContent className="px-0">
+              <p className="mt-2">Second Upper Class</p>
               <div className="mt-4">
                 <p className="font-medium mb-2">Memberships:</p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Google Development Student Club</Badge>
-                  <Badge variant="secondary">AWS Cloud Club</Badge>
+                  <Badge variant="outline">IEEE APU Student Branch</Badge>
+                  <Badge variant="outline">APU Google Development Student Club</Badge>
+                  <Badge variant="outline">APU AWS Cloud Club</Badge>
                 </div>
               </div>
             </CardContent>
@@ -68,17 +68,17 @@ export default function Portfolio() {
         </section>
 
         {/* Experience */}
-        <section>
+        <section className="pb-16 border-b-2 border-gray-200">
           <div className="flex items-center gap-3 mb-6">
-            <Briefcase className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Experience</h2>
+            <Briefcase className="w-6 h-6 text-gray-600" />
+            <h2 className="text-2xl font-semibold">Experience</h2>
           </div>
-          <Card>
-            <CardHeader>
+          <Card className="border-0 shadow-none">
+            <CardHeader className="px-0">
               <CardTitle>IT Intern (AI Team) - Gamer2Gamer Sdn. Bhd.</CardTitle>
-              <CardDescription>January 2024 - April 2024</CardDescription>
+              <CardDescription className="text-gray-500">January 2024 - April 2024</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-0">
               <ul className="list-disc pl-4 space-y-2">
                 <li>Developed AI/ML-based eKYC solutions using Python and Git</li>
                 <li>Performed statistical analysis to evaluate and improve model performance</li>
@@ -86,30 +86,45 @@ export default function Portfolio() {
               </ul>
             </CardContent>
           </Card>
+          <Card className="border-0 shadow-none mt-6">
+            <CardHeader className="px-0">
+              <CardTitle>Chair of Computational Intelligence Society Chapter</CardTitle>
+              <CardDescription>IEEE APU Student Branch</CardDescription>
+              <CardDescription className="text-gray-500">May 2023 - February 2025</CardDescription>
+            </CardHeader>
+            <CardContent className="px-0">
+              <p>Leading initiatives in computational intelligence and organizing related events.</p>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Projects */}
-        <section>
+        <section className="pb-16 border-b-2 border-gray-200">
           <div className="flex items-center gap-3 mb-6">
-            <Code className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Featured Projects</h2>
+            <Code className="w-6 h-6 text-gray-600" />
+            <h2 className="text-2xl font-semibold">Featured Projects</h2>
           </div>
-          <div className="grid gap-6">
-            <Card>
-              <CardHeader>
+          <div className="space-y-6">
+            <Card className="border-0 shadow-none">
+              <CardHeader className="px-0">
                 <CardTitle>CropDoctor - Crop Leaf Diseases Classification (FYP)</CardTitle>
-                <Badge className="w-fit">Second Runner Up - Best Computer Science Innovation Award</Badge>
+                <div className="mt-2">
+                  <Badge variant="default" className="bg-green-100 text-green-800 hover:bg-green-200">
+                    <Award className="w-4 h-4 mr-1" />
+                    Second Runner Up - Best Computer Science Innovation Award
+                  </Badge>
+                </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-0">
                 <p>Mobile app using MobileNetV3-large for crop leaf disease detection, achieving 98% accuracy</p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
+            <Card className="border-0 shadow-none">
+              <CardHeader className="px-0">
                 <CardTitle>Credit Card Fraud Detection</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-0">
                 <p>Built a detection system using LightGBM and XGBoost with Optuna optimization</p>
               </CardContent>
             </Card>
@@ -117,28 +132,28 @@ export default function Portfolio() {
         </section>
 
         {/* Competitions */}
-        <section>
+        <section className="pb-16 border-b-2 border-gray-200">
           <div className="flex items-center gap-3 mb-6">
-            <Award className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Competitions</h2>
+            <Award className="w-6 h-6 text-gray-600" />
+            <h2 className="text-2xl font-semibold">Competitions</h2>
           </div>
-          <div className="grid gap-6">
-            <Card>
-              <CardHeader>
+          <div className="space-y-6">
+            <Card className="border-0 shadow-none">
+              <CardHeader className="px-0">
                 <CardTitle>PayHack 2024 Open Finance Hackathon</CardTitle>
-                <CardDescription>November 2024</CardDescription>
+                <CardDescription className="text-gray-500">November 2024</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-0">
                 <p>Developed a credit card fraud detection system using Python and LightGBM</p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
+            <Card className="border-0 shadow-none">
+              <CardHeader className="px-0">
                 <CardTitle>AWS Jam Competition</CardTitle>
-                <CardDescription>November 2023</CardDescription>
+                <CardDescription className="text-gray-500">November 2023</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-0">
                 <p>Secured 6th place out of 20 teams utilizing AWS services to solve real-world problems</p>
               </CardContent>
             </Card>
@@ -148,16 +163,16 @@ export default function Portfolio() {
         {/* Skills */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <Code className="w-6 h-6 text-blue-600" />
-            <h2 className="text-2xl font-bold">Skills & Certifications</h2>
+            <Users className="w-6 h-6 text-gray-600" />
+            <h2 className="text-2xl font-semibold">Skills & Certifications</h2>
           </div>
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">Technical Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {["Python", "Git", "DVC", "C", "C++", "Microsoft SQL", "Engati", "R", "Java", "Figma", "LabVIEW"].map(
+                {["Python", "Git", "DVC", "Pandas", "Numpy", "Pytorch", "C", "C++", "Microsoft SQL", "Engati", "R", "Java", "Figma", "LabVIEW"].map(
                   (skill) => (
-                    <Badge key={skill} variant="secondary">
+                    <Badge key={skill} variant="outline">
                       {skill}
                     </Badge>
                   ),
@@ -175,7 +190,7 @@ export default function Portfolio() {
               <h3 className="font-medium mb-2">Languages</h3>
               <div className="flex flex-wrap gap-2">
                 {["English", "Mandarin", "Bahasa Melayu", "Cantonese"].map((lang) => (
-                  <Badge key={lang} variant="secondary">
+                  <Badge key={lang} variant="outline">
                     {lang}
                   </Badge>
                 ))}
@@ -185,11 +200,7 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <footer className="bg-gray-50 py-8 mt-12">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>© 2025 Yong Jun Fai. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
